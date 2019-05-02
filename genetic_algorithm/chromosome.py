@@ -19,7 +19,7 @@ class Chromosome:
         return f"Chromosome({''.join(self.genes)})"
 
     def __eq__(self, other):
-        return self.genes == other.genes
+        return np.array_equal(self.genes, other.genes)
 
     def __lt__(self, other):
         return self.fitness() < other.fitness()
